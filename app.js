@@ -11,6 +11,8 @@ server.listen(3000);
 app.set("view engine", "ejs");
 app.set("views", "views");
 
+
+
 // khi ket noi socket se tao 1 room voi ten la id cua client ket noi, 
 // duoc phep tao moi va dat ten room
 // khong co ham tao room, chi co ham join vao room. 
@@ -21,7 +23,18 @@ io.on("connection", function(socket){
 
     socket.on("taoRoom", function(data){
         socket.join(data);
-        console.log(socket.adapter.rooms);
+        socket.nameRoom = data;
+        var arrRoom = [];
+        for (room in socket.adapter.rooms){
+            arrRoom.push(room);
+        }
+        io.sockets.emit("send-room", arrRoom);
+        socket.emit("sever-gui-room", data);
+    });
+
+    // gui nguoi trong room
+    socket.on("chat", function(data){
+        io.sockets.in(socket.nameRoom).emit("sv-chat", data);
     });
     socket.on("thoatRoom", function(data){
         socket.leave(data);

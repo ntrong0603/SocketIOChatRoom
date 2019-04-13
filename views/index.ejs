@@ -9,13 +9,28 @@
     <script src="socket.io/socket.io.js"></script>
     <script src="js/main.js"></script>
 
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-    <input type="text" id="txtRoom">
-    <input type="button" id="taoRoom" value="Tao Room">
-    <input type="button" id="thoatRoom" value="Thoat Room">
-    <div id="left"></div>
-    <div id="right"></div>
+    
+    <div id="wrapper">
+        <div>
+            <input type="text" id="txtRoom">
+            <input type="button" id="taoRoom" value="Tao Room/Join Room">
+            <input type="button" id="thoatRoom" value="Thoat Room">
+        </div>
+        <div style="clear:both;"></div>
+        <div id="left">
+            <h3>Rooms hien co</h3>
+            <div id="danhsachroom"></div>
+        </div>
+        <h4 id="roomhientai">...</h4>
+        <div id="right">
+            
+        </div>
+        <div style="clear:both;"></div>
+        <input type="text" id="txtMessgases" name = "txtMessgases"/>
+        <input type="button" id="chat" value="chat">
+    </div>
 </body>
 </html>

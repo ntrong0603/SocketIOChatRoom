@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding:0;
+    background-color: yellow;
+}
+#wrapper{
+    width: 600px;
+    margin: auto;
+}
+#left{
+    float: left;
+    width: calc(20% - 2px);
+    border: 1px solid pink;
+    height: 100%;
+}
+#right{
+    float: right;
+    width: calc(80% - 2px);
+    min-height: 300px;
+    border: 1px solid darkblue;
+}
+#roomhientai{
+    margin: 0;
+    padding: 0;
+    float: right;
+    background-color: azure;
+    color: red;
+    font-size: 20px;
+}
